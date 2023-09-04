@@ -3,7 +3,6 @@
 import { Paper, Text, Stack, Group, Title, Card } from "@mantine/core";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 export default function Donation() {
   const [donations, setDonations] = useState<Donation[]>([]);
