@@ -1,5 +1,6 @@
-import { useState } from "react"; 
+import { useState, ChangeEvent } from "react";
 import { URL_DATA } from "@/utils/api";
+
 import { Input, Button, Card, Title, Stack } from "@mantine/core";
 
 export default function Form() {
@@ -21,7 +22,7 @@ export default function Form() {
 
   const [isSubmitting, setIsSubmitting] = useState(false); 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     let hasErrors = false;
@@ -93,7 +94,7 @@ export default function Form() {
     return emailRegex.test(email);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
